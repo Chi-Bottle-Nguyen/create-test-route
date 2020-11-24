@@ -44,7 +44,7 @@ driver.find_element_by_css_selector('#email').send_keys(email)
 driver.find_element_by_css_selector('#password').send_keys(password)
 login = driver.find_element_by_css_selector('#submit')
 login.click()
-time.sleep(9) #load time, can be reduced
+time.sleep(1) #load time, can be reduced
 
 #Click on Post and choose One Time Route
 post_button = driver.find_element_by_css_selector('#schedule-content > div.mb-4 > button.btn.btn-primary.network-activate-button.modal-button')
@@ -70,6 +70,7 @@ for row in rows:
 
 #Sending driver and admin information
 driver.find_element_by_css_selector('#assign-employee-input').send_keys(mydriver)
+time.sleep(1)
 driver.find_element_by_class_name('assign-employee-button').click()
 driver.find_element_by_css_selector('#admin_name').send_keys(admin)
 driver.find_element_by_css_selector('#admin_phone').send_keys(admin_phone)
@@ -86,7 +87,7 @@ driver.find_element_by_css_selector('#route_time-end_time').send_keys(end)
 
 #Submiting route
 driver.find_element_by_css_selector('#submit').click()
-time.sleep(9)
+time.sleep(2)
 
 #Logging out and close window
 driver.find_element_by_xpath('/html/body/header/nav/div/div/div/a[2]').click()
