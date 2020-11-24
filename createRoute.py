@@ -51,7 +51,7 @@ post_button = driver.find_element_by_css_selector('#schedule-content > div.mb-4 
 post_button.click()
 one_time = driver.find_element_by_css_selector('#onetime-route-button')
 one_time.click()
-time.sleep(1)
+time.sleep(2)
 
 #Selecting a random route template
 select)template = driver.find_element_by_css_selector('#select-route-template')
@@ -60,7 +60,7 @@ select_template.click()
 table = driver.find_element_by_class_name('network-table')
 rows = table.find_elements_by_tag_name('tr')
 
-route = 'RT-' + str(random.randint(1, 10))
+route = 'RT-' + str(randint(1, 10))
 
 for row in rows:
 	col = row.find_elements_by_tag_name("td")
@@ -70,8 +70,9 @@ for row in rows:
 
 #Sending driver and admin information
 driver.find_element_by_css_selector('#assign-employee-input').send_keys(mydriver)
-time.sleep(1)
-driver.find_element_by_class_name('assign-employee-button').click()
+time.sleep(2)
+name = driver.find_element_by_class_name('assign-employee-button')
+name.click()
 driver.find_element_by_css_selector('#admin_name').send_keys(admin)
 driver.find_element_by_css_selector('#admin_phone').send_keys(admin_phone)
 
@@ -87,7 +88,7 @@ driver.find_element_by_css_selector('#route_time-end_time').send_keys(end)
 
 #Submiting route
 driver.find_element_by_css_selector('#submit').click()
-time.sleep(2)
+time.sleep(1)
 
 #Logging out and close window
 driver.find_element_by_xpath('/html/body/header/nav/div/div/div/a[2]').click()
